@@ -84,7 +84,39 @@
       100% { transform: scale(1); }
     }
 
-    
+
+    /* 🌸 Icon bay */
+    .floating-icon, .falling-icon {
+      position: absolute;
+      z-index: 5;
+      pointer-events: none;
+      opacity: 0.8;
+    }
+
+    .floating-icon {
+      font-size: 6vw;
+      animation: floatIcon 10s linear infinite;
+    }
+
+    .falling-icon {
+      font-size: 5vw;
+      animation: fallIcon 6s linear infinite;
+    }
+
+    @keyframes floatIcon {
+      0% { transform: translate(0,0) rotate(0deg); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { transform: translate(50px,-300px) rotate(360deg); opacity: 0; }
+    }
+
+    @keyframes fallIcon {
+      0% { transform: translateY(-50px) rotate(0deg); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { transform: translateY(700px) rotate(360deg); opacity: 0; }
+    }
+
     /* 💗 Responsive fix cho điện thoại nhỏ */
     @media (max-width: 300px) {
       h1 {
@@ -110,7 +142,6 @@
 </head>
 
 <body>
-
   <canvas id="fireworks"></canvas>
   <canvas id="stars"></canvas>
 
